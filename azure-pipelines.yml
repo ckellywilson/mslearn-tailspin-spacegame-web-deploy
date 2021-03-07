@@ -129,12 +129,12 @@ stages:
         arguments: '--configuration $(buildConfiguration)'
         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
     - task: PowerShell@2
+      displayName: 'Set SITE_URL environment variable'
       inputs:
         targetType: 'inline'
         script: |
-          # Write your PowerShell commands here.
-          
-          $env:SITE_URL=$(SITE_URL)
+          # Write your PowerShell commands here.          
+          $env:SITE_URL="$(SITE_URL)"
         failOnStderr: true
         pwsh: true
     - task: DotNetCoreCLI@2
