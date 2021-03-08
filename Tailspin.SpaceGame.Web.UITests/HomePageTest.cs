@@ -63,7 +63,7 @@ namespace UITests
                 driver.Navigate().GoToUrl(url + "/");
 
                 // Wait for the page to be completely loaded.
-                new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                new WebDriverWait(driver, TimeSpan.FromSeconds(30))
                     .Until(d => ((IJavaScriptExecutor) d)
                         .ExecuteScript("return document.readyState")
                         .Equals("complete"));
